@@ -5,7 +5,7 @@ import { CardItemListWrapper } from "./CardItemList.Styled";
 export const CardItemList = ({users}) => {
   return (
       <CardItemListWrapper>
-        {users.map(item => (<CardItem key={item.id} avatar={item.avatar} user={item.user} tweets={item.tweets} followers={item.followers} />))}
+        {users.map(user => (<CardItem key={user.id} id={user.id} avatar={user.avatar} user={user.user} tweets={user.tweets} followers={user.followers} />))}
       </CardItemListWrapper>
   )
 }

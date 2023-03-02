@@ -5,7 +5,7 @@ export const CardItemListWrapper = styled.ul`
   grid-gap: 32px;
   justify-content: center;
   padding: 0;
-  margin: 0 auto;
+  margin: 32px auto;
   grid-template-columns: repeat(auto-fill, 380px);
   list-style: none;
 `;

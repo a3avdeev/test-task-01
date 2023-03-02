@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from "../../images/Logo.png";
 import Picture from "../../images/picture2.png";
 import { Card, LogoImg, PictureImg, CardTitles, CardButton, AvatarWrapper } from "./CardItemList.Styled";
-import { useState, useEffect } from 'react';
 
 export const CardItem = ({ id, avatar, user, tweets, followers }) => {
 
     const [toggle, setToggle] = useState(() => {
         const statusBtn = JSON.parse(localStorage.getItem("button"));
         return statusBtn ?? true;
+        
     });
 
     const [follow, setFollow] = useState(() => {
@@ -16,12 +16,11 @@ export const CardItem = ({ id, avatar, user, tweets, followers }) => {
         return value ?? followers;
     });
 
-    console.log(id);
-
     useEffect(() => {
         localStorage.setItem("followers", JSON.stringify(follow));
         localStorage.setItem("button", JSON.stringify(toggle));
-    }, [follow, toggle]);
+        localStorage.setItem("id", JSON.stringify(id));
+    }, [follow, toggle, id]);
 
     const handleIncrease = () => {
         return (
